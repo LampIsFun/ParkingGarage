@@ -1,0 +1,28 @@
+package main;
+
+import java.util.Random;
+
+import gui.MainWindow;
+import structures.ParkingStructure;
+import vehicles.Car;
+import vehicles.Truck;
+import vehicles.Van;
+import vehicles.Vehicle;
+
+
+public class Main {
+
+	@SuppressWarnings({ "static-access", "unused" })
+	public static void main(String[] args) {
+
+		
+
+
+		MainWindow mainWindow = new MainWindow();
+		mainWindow.launch(MainWindow.class);
+
+
+
+
+	}
+}

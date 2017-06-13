@@ -1,0 +1,34 @@
+package structures;
+
+import vehicles.Vehicle;
+
+public class ParkingSpot {
+
+	private int placeNumber;
+	private boolean handicapped;
+	private boolean empty;
+	
+	
+	public ParkingSpot(int placeNumber, boolean handicapped) {
+		
+		this.placeNumber = placeNumber;
+		this.handicapped = handicapped;
+		this.empty = true;
+	}
+
+
+	public int getPlaceNumber() {
+		return placeNumber;
+	}
+
+
+	public boolean isHandicapped() {
+		return handicapped;
+	}
+	
+	public boolean check() {
+		return empty;
+	}
+	
+	
+}
