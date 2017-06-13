@@ -46,7 +46,7 @@ public class MainWindow extends Application {
 		// 50/100 elements to allow room
 		// for the user to create vehicles.)
 		Random numberGenerator = new Random();
-		for (int i = 0; i < 99; i++) {
+		for (int i = 0; i < 50; i++) {
 			int choose = numberGenerator.nextInt(3);
 			switch (choose) {
 			case 0: {
@@ -65,7 +65,7 @@ public class MainWindow extends Application {
 		}
 		// Putting cars into parking spots.
 		// for each car that has been created thus far...
-		for (int i = 0; i < 99; i++) {
+		for (int i = 0; i < 50; i++) {
 			// get a random parking spot number...
 			int nextAvailableSpot = numberGenerator.nextInt(PARKING_SPOTS);
 			// cycle through random numbers until one is marked empty.
@@ -258,6 +258,12 @@ public class MainWindow extends Application {
 				yearComboBox.setStyle(null);
 			}
 		});
+		typeComboBox.valueProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> arg0, String arg1, String arg2) {
+				typeComboBox.setStyle(null);
+			}
+		});
 
 		// Error Handling
 		finalRegister.setOnAction(e -> {
@@ -310,6 +316,9 @@ public class MainWindow extends Application {
 					& !typeComboBox.getValue().equals("Click to choose")) {
 				typeError = false;
 				vehicleType = typeComboBox.getValue();
+			} else {
+				typeComboBox.setStyle("-fx-background-color: red;");
+				typeError = true;
 			}
 			if (makeError | vinError | spotError | yearError | timeError) {
 				errorsExist = true;
